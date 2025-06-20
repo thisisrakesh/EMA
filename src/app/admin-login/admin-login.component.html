@@ -1,0 +1,35 @@
+<div class="admin-login-container">
+  <img src="https://th.bing.com/th/id/OIP.GpD7VUjoz2sgFZWC_tHZ_AHaE8?w=244&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Admin Image" />
+
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="login-form">
+    <h2>Admin Login</h2>
+
+    <div class="input-group">
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        [(ngModel)]="username"
+        required
+        placeholder="Enter your username"
+      />
+    </div>
+
+    <div class="input-group">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="password"
+        required
+        placeholder="Enter your password"
+      />
+    </div>
+
+    <button type="submit">Login</button>
+
+    <p *ngIf="errorMessage" class="error-msg">{{ errorMessage }}</p>
+  </form>
+</div>

@@ -1,0 +1,59 @@
+<div class="dashboard-container">
+  <h1>Employee Management</h1>
+
+  <!-- Search -->
+  <div class="search-container">
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      placeholder="🔍 Search by name..."
+    />
+  </div>
+
+  <!-- Grid Layout -->
+  <div class="grid-layout">
+
+    <!-- Left: Table -->
+    <div class="employee-table">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of employees | filter:searchText">
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.role }}</td>
+            <td>
+              <button class="edit-btn" (click)="editEmployee(emp)">Edit</button>
+              <button class="delete-btn" (click)="deleteEmployee(emp.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="form-container">
+      <h2>{{ selectedEmployee.id === 0 ? '➕ Add Employee' : '✏️ Edit Employee' }}</h2>
+
+      <label>Name</label>
+      <input type="text" [(ngModel)]="selectedEmployee.name" />
+
+      <label>Role</label>
+      <input type="text" [(ngModel)]="selectedEmployee.role" />
+
+      <div class="button-group">
+        <button class="save-btn" (click)="saveEmployee()">
+          {{ selectedEmployee.id === 0 ? 'Add' : 'Update' }}
+        </button>
+        <button class="clear-btn" (click)="clearForm()">Clear</button>
+      </div>
+    </div>
+  </div>
+</div>

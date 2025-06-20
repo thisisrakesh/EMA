@@ -1,0 +1,38 @@
+<div class="employee-login-container">
+  <img
+    src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=400&q=80"
+    alt="Employee Image"
+  />
+
+  <form (ngSubmit)="onLogin()" #loginForm="ngForm" class="login-form">
+    <h2>Employee Login</h2>
+
+    <div class="input-group">
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        [(ngModel)]="username"
+        required
+        placeholder="Enter your username"
+      />
+    </div>
+
+    <div class="input-group">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="password"
+        required
+        placeholder="Enter your password"
+      />
+    </div>
+
+    <button type="submit">Login</button>
+
+    <p *ngIf="errorMessage" class="error-msg">{{ errorMessage }}</p>
+  </form>
+</div>

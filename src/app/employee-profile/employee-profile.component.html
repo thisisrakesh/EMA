@@ -1,0 +1,36 @@
+<div *ngIf="loaded" class="profile-container">
+  <div *ngIf="!isEditing" class="profile-card">
+    <img src="https://th.bing.com/th/id/OIP.nsnjHchi3ajidBnvCc39jQHaGC?w=189&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Profile Picture" class="profile-pic" />
+    <h2>Employee Profile</h2>
+    <p><strong>Name:</strong> {{ employee.name }}</p>
+    <p><strong>Role:</strong> {{ employee.role }}</p>
+    <p><strong>Email:</strong> {{ employee.email }}</p>
+
+    <div class="btn-group">
+      <button class="btn primary" (click)="startEdit()">Edit Profile</button>
+      <button class="btn primary" (click)="goToLeave()">Apply Leave</button>
+      <button class="btn primary" (click)="goToAnnouncements()">View Announcements</button>
+    </div>
+  </div>
+
+  <div *ngIf="isEditing" class="profile-card">
+    <h2>Edit Profile</h2>
+    <label>
+      Name:
+      <input [(ngModel)]="editableEmployee.name" />
+    </label><br />
+    <label>
+      Role:
+      <input [(ngModel)]="editableEmployee.role" />
+    </label><br />
+    <label>
+      Email:
+      <input [(ngModel)]="editableEmployee.email" />
+    </label><br />
+
+    <div class="btn-group">
+      <button class="btn primary" (click)="saveProfile()">Save</button>
+      <button class="btn secondary" (click)="cancelEdit()">Cancel</button>
+    </div>
+  </div>
+</div>

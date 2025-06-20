@@ -1,0 +1,33 @@
+<h2>Leave Request Form</h2>
+
+<div>
+  <label>Employee Name:</label>
+  <input type="text" [(ngModel)]="employeeName" placeholder="Enter your name" />
+</div>
+
+<div>
+  <label>Leave Type:</label>
+  <select [(ngModel)]="leaveType">
+    <option value="" disabled>Select leave type</option>
+    <option *ngFor="let type of leaveTypes" [value]="type">{{ type }}</option>
+  </select>
+</div>
+
+<div>
+  <label>From Date:</label>
+  <input type="date" [(ngModel)]="fromDate" />
+</div>
+
+<div>
+  <label>To Date:</label>
+  <input type="date" [(ngModel)]="toDate" />
+</div>
+
+<div>
+  <label>Reason (optional):</label>
+  <textarea [(ngModel)]="reason" rows="3" placeholder="Reason for leave"></textarea>
+</div>
+
+<button (click)="submitLeaveRequest()">Submit</button>
+
+<p style="color: green;" *ngIf="message">{{ message }}</p>

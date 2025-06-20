@@ -1,0 +1,62 @@
+:host {
+  display: block;
+  max-width: 700px;
+  margin: 40px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #007bff;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.announcement-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.announcement-card {
+  background: #f9faff;
+  border-left: 6px solid #007bff;
+  padding: 20px 25px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.announcement-card:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.title-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #003d99;
+}
+
+.date-text {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.message-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+  margin: 0;
+}

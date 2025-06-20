@@ -1,0 +1,27 @@
+<div class="container">
+  <!-- <h1>Upcoming Holidays & Announcements</h1> -->
+   <h1 class="title">Upcoming Holidays & Announcements</h1>
+
+
+  <p class="welcome-message">Welcome to the employee portal!</p>
+
+  <p class="current-date">{{ today | date:'fullDate' }}</p>
+
+  <div *ngIf="announcements.length > 0; else noHolidays">
+    <ul class="announcement-list">
+      
+      <li *ngFor="let announcement of announcements" class="announcement-card">
+        <div class="header">
+          <span class="title-text">{{ announcement.title }}</span>
+          <span class="date-text">{{ announcement.date | date: 'fullDate' }}</span>
+        </div>
+        <p class="message-text">{{ announcement.message }}</p>
+      </li>
+
+    </ul>
+  </div>
+
+  <ng-template #noHolidays>
+    <p class="no-holidays">No upcoming holidays.</p>
+  </ng-template>
+</div>
